@@ -1,12 +1,85 @@
-# React + Vite
+# Portafolio Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ⚙️ Tech Stack
+- **React** – Desarrollo de UI basado en componentes.
+- **Vite** – Herramienta de construcción ultrarrápida.
+- **TailwindCSS** – CSS utilitario para estilizado ágil.
+- **Lucide Icons** – Paquete de íconos limpio y elegante.
+- **Radix UI** – Primitivas de componentes accesibles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚡️ Funcionalidades
+
+- 🌑 **Modo Claro/Oscuro**  
+  Guarda la preferencia de tema en localStorage con transiciones suaves.
+
+- 💫 **Fondos Animados**  
+  Estrellas, meteoros, efectos al hacer scroll y elementos con brillo.
+
+- 📱 **Navegación Responsiva**  
+  Menús de escritorio y móvil con efecto glassmorphism.
+
+- 👨‍💻 **Sección de “Hero” & “Sobre Mí”**  
+  Presenta quién eres con animaciones de entrada y botones interactivos.
+
+- 📊 **Grid de Habilidades**  
+  Barras de progreso filtrables y categorías con ancho animado.
+
+- 🖼️ **Proyectos Destacados**  
+  Muestra capturas de pantalla, tech stacks y enlaces a GitHub/demo.
+
+- 📩 **Sección de Contacto**  
+  Íconos sociales + formulario responsivo con notificaciones toast.
+
+
+---
+
+## 👌 Quick Start
+
+### Prerrequisitos
+- ⭐ **Node.js**  
+  Asegúrate de tener instalado Node.js (versión ≥ 14.x).  
+- ⭐ **Git**  
+  Para clonar el repositorio y seguir el historial de cambios.  
+
+- ⭐ **Docker**  
+  Para contenerizar la aplicación y ejecutarla en un entorno aislado.  
+  - [Instalar Docker Desktop](https://www.docker.com/products/docker-desktop)  
+  - Verifica con:
+    ```bash
+    docker --version
+    ```
+
+### Clonar y Ejecutar en Desarrollo
+## Node.js
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/tu-usuario/react-tailwind-portfolio.git
+
+# 2. Instala dependencias
+npm install
+
+# 3. Inicia el servidor de desarrollo
+npm run dev
+ ```
+La aplicaciones estara disponible en http://localhost:5173
+
+## Docker
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/tu-usuario/react-tailwind-portfolio.git
+
+
+
+# 3. Construir la imagen Docker con su contenedor
+docker-compose up --build -d
+
+# 4. (Al terminar) Eliminar la contenedor con sus volumenes
+docker compose down -v
+ ```
+La aplicaciones estara disponible en http://localhost:3000
+
