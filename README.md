@@ -58,7 +58,7 @@
 ## Node.js
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/tu-usuario/react-tailwind-portfolio.git
+git clone https://github.com/tu-usuario/PortafolioReact.git
 
 # 2. Instala dependencias
 npm install
@@ -71,7 +71,7 @@ La aplicaciones estara disponible en http://localhost:5173
 ## Docker
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/tu-usuario/react-tailwind-portfolio.git
+git clone https://github.com/tu-usuario/PortafolioReact.git
 
 
 
@@ -82,4 +82,5 @@ docker-compose up --build -d
 docker compose down -v
  ```
 La aplicaciones estara disponible en http://localhost:3000
+
 
