@@ -11,13 +11,37 @@
   --color-card: hsl(var(--card));
 
   --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
+ 
+  --animate-fade-in: fade-in 1.3s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 1.3s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 1.3s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 1.3s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 1.3s ease-out 0.8s forwards;
+
+  --animate-drift: drift var(--duration-drift, 10s) ease-in-out infinite;
+  --animate-pulse-subtle: drift var(--duration-pulse, 10s) ease-in-out infinite;
+
+  --animate-meteor: meteor var(--duration-meteor, 5s) linear infinite;
+
+
+   @keyframes drift {
+    0%, 100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    25% {
+      opacity: 0.8;
+      transform: translate(1px, -3px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(-1px, 3px);
+    }
+    75% {
+      opacity: 0.9;
+      transform: translate(2px, -1px);
+    }
+  }
 
   @keyframes float {
     0%,
@@ -52,11 +76,11 @@
       transform: rotate(215deg) translateX(0);
       opacity: 1;
     }
-    70% {
+    60% {
       opacity: 1;
     }
     100% {
-      transform: rotate(215deg) translateX(-500px);
+      transform: rotate(215deg) translateX(-600px);
       opacity: 0;
     }
   }
@@ -64,27 +88,31 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    /* --- Paleta día (modo claro) --- */
+   --background: 210 40% 98%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
+    --primary: 150, 100%, 30%;
     --primary-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
+    --border: 150, 100%, 20%;         
+
+    /* --- Duraciones personalizadas --- */
+    --duration-drift: 10s;  
+    --duration-pulse: 10s;  
+    --duration-meteor: 5s;  
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
-
-    --card: 222 47% 8%;
-
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
-
-    --border: 217 33% 20%;
+    /* --- Paleta modo oscuro --- */
+    --background: 220 40% 8%;            /* Azul noche */
+    --foreground: 0 0% 95%;              /* Casi blanco */
+    --card: 220 40% 12%;                 /* Azul ligeramente menos oscuro */
+    --primary: 13, 100%, 50%;               /* Púrpura suave */
+    --primary-foreground: 0 0% 100%;     /* Blanco puro */
+    --border: 13, 100%, 45%;                /* Púrpura intenso */
   }
 
   * {
@@ -123,35 +151,75 @@
 }
 
 @utility text-glow {
-  @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+    @apply relative;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  }
+
+  @utility card-hover {
+    @apply transition-transform duration-500 hover:scale-105 hover:shadow-2xl;
+  }
+
+  /* --- Borde con gradiente muy sutil --- */
+  @utility gradient-border {
+    @apply relative rounded-lg;
+    background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  @utility cosmic-button {
+    @apply px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold
+           transition-all duration-500 hover:shadow-[0_0_15px_rgba(0,255,255,0.7)]
+           hover:scale-110 active:scale-95;
+  }
+
+ @utility star {
+    @apply absolute rounded-full bg-white;
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
+    animation: var(--animate-pulse-subtle); /* Usamos la variable para “drift” */
+  }
+
+  /* --- Estilo básico de cada meteoro --- */
+  @utility meteor {
+    @apply absolute bg-gradient-to-r from-white via-white to-transparent rounded-full;
+    box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.5);
+    animation: var(--animate-meteor);
+  }
+
+:not(.dark) .star {
+  /* Fuerza color gris oscuro sobre fondo claro */
+  background-color: hsl(0, 0%, 20%) !important;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.6) !important;
 }
 
-@utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+:not(.dark) .meteor {
+  /* Degradado de gris oscuro a transparente */
+  background: linear-gradient(
+    to right,
+    hsl(0, 0%, 20%) 0%,
+    hsl(0, 0%, 20%) 50%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.5) !important;
 }
 
-@utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
+/* ------------------------------------------------
+   Override para modo oscuro: estrellas y meteoros blancos/brillantes
+   ------------------------------------------------ */
+.dark .star {
+  /* Restablece a blanco puro */
+  background-color: hsl(0, 0%, 100%) !important;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6) !important;
 }
 
-@utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-         hover:scale-105 active:scale-95;
-}
-
-@utility star {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-}
-
-@utility meteor {
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+.dark .meteor {
+  /* Degradado de blanco a transparente */
+  background: linear-gradient(
+    to right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 0%, 100%) 50%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.5) !important;
 }
 
 #root {
