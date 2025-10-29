@@ -12,13 +12,13 @@ const projects = [
   },
   {
     id: 2,
-    title: "Memory Game ",
+    title: "ICPC Landing Page",
     description:
-      "Fun memory Game built with React and Babel using only one file of HTML",
+      "Landing page for the ICPC competition built with Node.js and TypeScript.",
     image: "/projects/project2.png",
-    tags: ["ReactJS", "Babel", "HTML"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/iancumes/lab6react",
+    tags: ["Node.js", "TypeScript", "Tailwind CSS"],
+    demoUrl: "https://icpc-landing.vercel.app/",
+    githubUrl: "https://github.com/iancumes/ICPC-landing",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const projects = [
       "Project for a company related with HR using React, ExpressJS and PostgreSQL.",
     image: "/projects/project3.png",
     tags: ["ReactJS", "PostgreSQL", "ExpressJS"],
-    demoUrl: "#",
+    demoUrl: "https://entrapp-frontend.vercel.app/",
     githubUrl: "https://github.com/iancumes/EntrappFront",
   },
   
