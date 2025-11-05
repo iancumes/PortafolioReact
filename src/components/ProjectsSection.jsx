@@ -3,19 +3,19 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Calculator with React",
-    description: "A calculator using JavaScript, Vite and React .",
-    image: "/projects/project1.png",
-    tags: ["ReactJS", "CSS", "HTML"],
+    title: "Ecommerce Computers",
+    description: "An ecommerce website for computers built with Vue, TypeScript, Tailwind CSS, Python and Mongo DB.",
+    image: "/projects/project5.png",
+    tags: ["Vue", "TypeScript", "Tailwind CSS", "Python", "MongoDB"],
     demoUrl: "#",
-    githubUrl: "https://github.com/iancumes/calc_reactjs",
+    githubUrl: "https://github.com/iancumes/ecommerce-project",
   },
   {
     id: 2,
     title: "ICPC Landing Page",
     description:
       "Landing page for the ICPC competition built with Node.js and TypeScript.",
-    image: "/projects/project2.png",
+    image: "/projects/project4.png",
     tags: ["Node.js", "TypeScript", "Tailwind CSS"],
     demoUrl: "https://icpc-landing.vercel.app/",
     githubUrl: "https://github.com/iancumes/ICPC-landing",
