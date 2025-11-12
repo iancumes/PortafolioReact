@@ -108,7 +108,7 @@ export const ContactSection = () => {
             className="bg-card p-8 rounded-lg shadow-xs"
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-semibold mb-6"> Envia un Correo, Aun no funciona</h3>
+            <h3 className="text-2xl font-semibold mb-6"> Envia un Correo, "Funcionalidad no activa")</h3>
 
             <form className="space-y-6">
               <div>
