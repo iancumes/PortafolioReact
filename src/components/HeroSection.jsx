@@ -21,7 +21,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            Soy un desarollador web en proceso, apasionado por crear experiencias digitales únicas.
+            Soy un desarollador en proceso, apasionado por crear experiencias digitales únicas.
             Amante de la tecnología y siempre en busca de nuevos desafíos.
             
           </p>

@@ -20,6 +20,7 @@ const skills = [
   { name: "Rust", level: 75, category: "backend" },
   { name: "MongoDB", level: 75, category: "backend" },
   { name: "C#,C++", level: 80, category: "backend" },
+  { name: "PowerBI", level: 70, category: "backend" },
   
 
   // Tools
@@ -28,6 +29,8 @@ const skills = [
   { name: "Figma", level: 70, category: "tools" },
   { name: "Postman", level: 75, category: "tools" },
   { name: "Slack", level: 80, category: "tools" },
+  { name: "JIRA", level: 85, category: "tools" },
+  { name: "AWS", level: 75, category: "tools" },
 
 ];
 
